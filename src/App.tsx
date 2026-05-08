@@ -132,10 +132,15 @@ export default function App() {
           className="flex items-center space-x-6"
         >
           <motion.div 
-            whileHover={{ scale: 1.1, rotate: 10 }}
-            className="bg-white text-red-700 w-14 h-14 rounded-full flex items-center justify-center font-black text-4xl shadow-inner cursor-pointer"
+            whileHover={{ scale: 1.1 }}
+            className="bg-white p-1 w-14 h-14 rounded-full flex items-center justify-center shadow-inner cursor-pointer overflow-hidden"
           >
-            +
+            <img 
+              src="https://nhracf.com/wp-content/uploads/2022/12/Nhracf-logo-1.png" 
+              alt="NHRAC Logo" 
+              className="w-full h-full object-contain"
+              referrerPolicy="no-referrer"
+            />
           </motion.div>
           <div>
             <h1 className="text-2xl md:text-3xl font-black tracking-tighter leading-none uppercase italic">NHRAC AMBULANCE</h1>
@@ -176,7 +181,14 @@ export default function App() {
             className="fixed inset-0 z-[60] bg-red-700/95 backdrop-blur-xl p-8 flex flex-col text-white"
           >
             <div className="flex justify-between items-center">
-              <span className="font-black tracking-tighter text-2xl">NHRAC</span>
+              <div className="bg-white p-1 w-12 h-12 rounded-lg flex items-center justify-center overflow-hidden">
+                <img 
+                  src="https://nhracf.com/wp-content/uploads/2022/12/Nhracf-logo-1.png" 
+                  alt="NHRAC Logo" 
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
               <button 
                 onClick={() => setMobileMenuOpen(false)}
                 className="p-3 border-2 border-white/20 rounded-full hover:bg-white/10"
@@ -298,8 +310,13 @@ export default function App() {
               className="relative bg-white p-12 lg:p-16 rounded-3xl shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border border-slate-200 w-full max-w-xl z-10"
             >
               <div className="flex items-center space-x-6 mb-12 border-b border-slate-100 pb-10">
-                <div className="w-20 h-20 bg-red-700 rounded-2xl flex items-center justify-center shadow-xl shadow-red-200">
-                  <ShieldCheck className="w-12 h-12 text-white" />
+                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-xl border border-slate-100 overflow-hidden p-2">
+                  <img 
+                    src="https://nhracf.com/wp-content/uploads/2022/12/Nhracf-logo-1.png" 
+                    alt="NHRAC Logo" 
+                    className="w-full h-full object-contain"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <div>
                   <h3 className="font-black text-3xl text-slate-800 uppercase tracking-tighter leading-none">Premium <br/> Facilities</h3>
@@ -540,7 +557,14 @@ export default function App() {
                   className="bg-slate-900 p-2 rounded-[50px] shadow-2xl skew-y-2 border-8 border-white/10"
                 >
                   <div className="p-12 bg-slate-950 rounded-[40px] text-white">
-                    <ShieldCheck className="w-20 h-20 text-red-600 mb-8" />
+                    <div className="w-24 h-24 bg-white rounded-3xl flex items-center justify-center mb-8 overflow-hidden p-3 shadow-2xl">
+                      <img 
+                        src="https://nhracf.com/wp-content/uploads/2022/12/Nhracf-logo-1.png" 
+                        alt="NHRAC Logo" 
+                        className="w-full h-full object-contain"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
                     <h3 className="text-4xl font-black tracking-tighter uppercase italic mb-6">Verified by NHRAC Association</h3>
                     <p className="text-slate-400 text-lg font-medium leading-relaxed mb-8">
                       We are official members of the National Human Rights Anti Corruption Association, ensuring ethical and humanitarian standards in every trip.
@@ -561,7 +585,17 @@ export default function App() {
       <footer className="bg-slate-950 text-white p-12 border-t border-slate-900">
         <div className="max-w-7xl mx-auto flex flex-col md:row justify-between items-center gap-12 text-center md:text-left">
           <div className="space-y-6">
-            <h2 className="text-3xl font-black italic tracking-tighter">NATIONAL AMBULANCE</h2>
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden p-1.5">
+                <img 
+                  src="https://nhracf.com/wp-content/uploads/2022/12/Nhracf-logo-1.png" 
+                  alt="NHRAC Logo" 
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <h2 className="text-3xl font-black italic tracking-tighter">NATIONAL AMBULANCE</h2>
+            </div>
             <div className="text-slate-500 text-sm max-w-sm">
               &copy; 2026 National Human Rights Anti Corruption Ambulance. <br/>
               Serving humanity with speed and care. Karipur, India.
