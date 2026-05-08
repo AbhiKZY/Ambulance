@@ -34,16 +34,18 @@ const COLORS = {
 const StatBlock = ({ label, value, isRed }: { label: string; value: string; isRed?: boolean }) => (
   <motion.div 
     whileHover={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
-    className="p-8 flex flex-col items-center justify-center text-center transition-colors"
+    className="p-4 md:p-8 flex flex-col items-center justify-center text-center transition-colors"
   >
     <motion.span 
       initial={{ scale: 0.5, opacity: 0 }}
       whileInView={{ scale: 1, opacity: 1 }}
-      className={`text-4xl lg:text-5xl font-black tracking-tighter ${isRed ? 'text-red-500' : 'text-white'}`}
+      className={`text-2xl sm:text-4xl lg:text-5xl font-black tracking-tighter ${isRed ? 'text-red-500' : 'text-white'}`}
     >
       {value}
     </motion.span>
-    <span className="text-[10px] uppercase tracking-[0.2em] opacity-60 mt-2 font-bold">{label}</span>
+    <span className="text-[8px] md:text-[10px] uppercase tracking-wider md:tracking-[0.2em] opacity-60 mt-1 md:mt-2 font-bold max-w-[120px] md:max-w-none">
+      {label}
+    </span>
   </motion.div>
 );
 
@@ -65,7 +67,7 @@ const FacilityItem = ({ en, ml, index }: { en: string; ml: string; index: number
 const TestimonialCard = ({ name, role, text }: { name: string; role: string; text: string }) => (
   <motion.div 
     whileHover={{ y: -5 }}
-    className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 relative"
+    className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 relative"
   >
     <QuoteIcon className="absolute top-6 right-8 text-slate-100 w-12 h-12" />
     <div className="flex items-center space-x-1 mb-6">
@@ -206,9 +208,9 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      <main className="flex-1 flex flex-col relative z-10">
+      <main className="flex-1 flex flex-col relative z-10 overflow-x-hidden">
         {/* Banner with extra motion */}
-        <section className="bg-slate-900 overflow-hidden py-4 border-b border-slate-800">
+        <section className="bg-slate-950 overflow-hidden py-3 border-b border-slate-800">
           <div className="flex whitespace-nowrap overflow-hidden group">
             <motion.div 
               animate={{ x: [0, -1000] }}
@@ -217,10 +219,10 @@ export default function App() {
             >
               {[1, 2, 3, 4, 5].map(i => (
                 <div key={i} className="flex items-center space-x-4">
-                  <span className="text-red-600 font-black text-2xl">•</span>
-                  <span className="text-white font-bold tracking-widest uppercase text-sm">24/7 Emergency Service AVAILABLE</span>
-                  <span className="text-white/40 font-bold tracking-widest uppercase text-sm">BEST RATES ACROSS KERALA</span>
-                  <span className="text-white font-bold tracking-widest uppercase text-sm">FREEZER & OXYGEN SUPPORT</span>
+                  <span className="text-red-600 font-black text-xl">•</span>
+                  <span className="text-white font-bold tracking-widest uppercase text-xs md:text-sm">24/7 Emergency Service AVAILABLE</span>
+                  <span className="text-white/40 font-bold tracking-widest uppercase text-xs md:text-sm">BEST RATES ACROSS KERALA</span>
+                  <span className="text-white font-bold tracking-widest uppercase text-xs md:text-sm">FREEZER & OXYGEN SUPPORT</span>
                 </div>
               ))}
             </motion.div>
@@ -228,19 +230,19 @@ export default function App() {
         </section>
 
         {/* Hero Section Enhanced */}
-        <section className="flex-1 grid lg:grid-cols-12 bg-white min-h-[700px] border-b border-slate-100">
-          <div className="lg:col-span-7 p-12 lg:p-24 flex flex-col justify-center relative overflow-hidden">
+        <section className="flex-1 grid lg:grid-cols-12 bg-white min-h-[600px] border-b border-slate-100">
+          <div className="lg:col-span-7 p-8 lg:p-24 flex flex-col justify-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full bg-dot-pattern opacity-5" />
             <motion.div 
-               initial={{ opacity: 0, x: -50 }}
+               initial={{ opacity: 0, x: -30 }}
                animate={{ opacity: 1, x: 0 }}
                transition={{ duration: 0.8, ease: "easeOut" }}
-               className="border-l-[20px] border-red-700 pl-8 lg:pl-16 relative z-10"
+               className="border-l-[12px] md:border-l-[20px] border-red-700 pl-6 md:pl-16 relative z-10"
             >
-              <h2 className="text-6xl lg:text-8xl font-black text-slate-900 leading-[0.9] tracking-tighter uppercase mb-8">
+              <h2 className="text-4xl sm:text-5xl lg:text-8xl font-black text-slate-900 leading-[0.95] tracking-tighter uppercase mb-6 md:mb-8">
                 National <br/>
                 Human Rights <br/>
-                <span className="text-red-700">Anti Corruption <br/> Ambulance</span>
+                <span className="text-red-700">Anti Corruption <br className="hidden sm:block" /> Ambulance</span>
               </h2>
               <motion.div 
                 initial={{ opacity: 0 }}
@@ -248,12 +250,14 @@ export default function App() {
                 transition={{ delay: 0.4 }}
                 className="space-y-4"
               >
-                <p className="text-3xl lg:text-4xl text-slate-800 font-black italic tracking-tight">
-                  നാഷണൽ ഹ്യൂമൻ റൈറ്റ്സ് <span className="text-red-700 uppercase underline decoration-4 underline-offset-8">ആന്റി കറപ്ഷൻ ആംബുലൻസ്</span>
-                </p>
-                <div className="flex items-center space-x-4 bg-slate-50 border border-slate-100 p-4 rounded-xl w-fit">
-                  <Clock className="w-8 h-8 text-red-700" />
-                  <p className="text-2xl text-slate-500 font-bold font-sans">
+                <div className="space-y-2">
+                  <p className="text-xl sm:text-2xl lg:text-4xl text-slate-800 font-black italic tracking-tight leading-tight">
+                    നാഷണൽ ഹ്യൂമൻ റൈറ്റ്സ് <span className="text-red-700 uppercase">ആന്റി കറപ്ഷൻ ആംബുലൻസ്</span>
+                  </p>
+                </div>
+                <div className="flex items-center space-x-3 bg-slate-50 border border-slate-100 p-3 md:p-4 rounded-xl w-fit">
+                  <Clock className="w-6 h-6 md:w-8 md:h-8 text-red-700 shrink-0" />
+                  <p className="text-lg md:text-2xl text-slate-500 font-bold font-sans line-clamp-2 md:line-clamp-none">
                     മിതമായ നിരക്കിൽ 24 മണിക്കൂറും സർവീസ്.
                   </p>
                 </div>
@@ -264,18 +268,18 @@ export default function App() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="mt-16 flex flex-col lg:flex-row items-stretch lg:items-center space-y-6 lg:space-y-0 lg:space-x-8"
+              className="mt-10 md:mt-16 flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-8"
             >
               <a 
                 href={`tel:${phoneNumber}`} 
-                className="group bg-red-700 text-white px-12 py-8 rounded-sm font-black text-3xl flex items-center justify-center shadow-2xl hover:bg-black transition-all transform hover:-translate-y-1"
+                className="group bg-red-700 text-white px-8 md:px-12 py-5 md:py-8 rounded-sm font-black text-xl md:text-3xl flex items-center justify-center shadow-2xl hover:bg-black transition-all transform hover:-translate-y-1"
               >
-                <Phone className="w-10 h-10 mr-6 group-hover:rotate-12 transition-transform" fill="currentColor" />
+                <Phone className="w-6 h-6 md:w-10 md:h-10 mr-4 md:mr-6 group-hover:rotate-12 transition-transform" fill="currentColor" />
                 ഇപ്പൊൾ വിളിക്കുക
               </a>
-              <div className="bg-slate-50 border-t-4 lg:border-t-0 lg:border-l-4 border-slate-900 px-12 py-6 rounded-sm flex flex-col justify-center">
+              <div className="bg-slate-50 border-t-2 md:border-t-0 md:border-l-4 border-slate-900 px-8 py-4 md:py-6 rounded-sm flex flex-col justify-center">
                 <span className="text-[10px] text-slate-400 uppercase font-black tracking-widest mb-1">Service Leader / ഉടമ</span>
-                <span className="text-3xl font-black text-slate-900 italic tracking-tighter">{ownerName}</span>
+                <span className="text-xl md:text-3xl font-black text-slate-900 italic tracking-tighter">{ownerName}</span>
               </div>
             </motion.div>
           </div>
