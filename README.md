@@ -19,12 +19,15 @@ This project is configured to deploy automatically to GitHub Pages using GitHub 
 4.  **Wait for Build**: Check the **Actions** tab to see the deployment progress.
 
 ### Troubleshooting GitHub Actions Failure
-If the Action fails with a "Permission Denied" error:
+If the Action fails with a "Permission Denied" or "Write access" error:
 1. Go to your repository **Settings > Actions > General**.
-2. Scroll to **Workflow permissions**.
+2. Scroll down to **Workflow permissions**.
 3. Select **Read and write permissions**.
-4. Click **Save**.
-5. Go to the **Actions** tab and re-run the failed job.
+4. Check **Allow GitHub Actions to create and approve pull requests**.
+5. Click **Save**.
+6. Go to the **Actions** tab, find the failed run, and click **Re-run all jobs**.
+
+**Note on Lockfiles**: If you see a warning about a missing `package-lock.json`, you can ignore it, or run `npm install` locally and commit the generated `package-lock.json` file to your repository.
 
 ## Local Development
 
