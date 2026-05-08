@@ -498,34 +498,36 @@ export default function App() {
         </section>
 
         {/* Big CTA */}
-        <section id="contact" className="py-32 bg-red-700 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-1/3 h-full bg-black skew-x-12 translate-x-20" />
+        <section id="contact" className="py-20 md:py-32 bg-red-700 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-black skew-x-12 translate-x-20 hidden lg:block" />
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
               <div className="space-y-8 text-white">
-                <h2 className="text-7xl lg:text-9xl font-black tracking-tighter leading-[0.8] uppercase">SAVE A <br/> LIFE. <br/> CALL US.</h2>
-                <div className="p-10 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20">
-                  <div className="flex items-center space-x-6 mb-8">
-                    <div className="p-5 bg-white rounded-2xl">
-                      <PhoneCall className="w-12 h-12 text-red-700" />
+                <h2 className="text-5xl sm:text-7xl lg:text-9xl font-black tracking-tighter leading-[0.9] md:leading-[0.8] uppercase">
+                  SAVE A <br className="hidden xs:block" /> LIFE. <br className="hidden xs:block" /> CALL US.
+                </h2>
+                <div className="p-6 md:p-10 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20">
+                  <div className="flex flex-col xs:flex-row items-center xs:items-start space-y-4 xs:space-y-0 xs:space-x-6 mb-8 text-center xs:text-left">
+                    <div className="p-4 md:p-5 bg-white rounded-2xl shrink-0">
+                      <PhoneCall className="w-8 h-8 md:w-12 md:h-12 text-red-700" />
                     </div>
                     <div>
-                      <p className="text-white font-black text-5xl tracking-tighter italic leading-none">{phoneNumber}</p>
-                      <p className="text-white/60 font-medium uppercase tracking-widest text-xs mt-2">Professional 24hr Emergency Hotline</p>
+                      <p className="text-3xl md:text-5xl font-black tracking-tighter italic leading-none">{phoneNumber}</p>
+                      <p className="text-white/60 font-medium uppercase tracking-widest text-[10px] md:text-xs mt-2">Professional 24hr Emergency Hotline</p>
                     </div>
                   </div>
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-3 md:space-x-4">
                     <button 
                       onClick={() => window.location.href = `tel:${phoneNumber}`}
-                      className="flex-1 bg-white text-red-700 font-black py-6 rounded-xl text-xl uppercase italic shadow-2xl hover:bg-slate-100 transition-colors"
+                      className="flex-1 bg-white text-red-700 font-black py-4 md:py-6 rounded-xl text-lg md:text-xl uppercase italic shadow-2xl hover:bg-slate-100 transition-colors"
                     >
                       Instant Call
                     </button>
                     <button 
                       onClick={() => window.open(`https://wa.me/91${phoneNumber}`, '_blank')}
-                      className="w-24 bg-green-500 text-white flex items-center justify-center rounded-xl hover:bg-green-600 transition-colors shadow-2xl"
+                      className="w-16 md:w-24 bg-green-500 text-white flex items-center justify-center rounded-xl hover:bg-green-600 transition-colors shadow-2xl"
                     >
-                      <MessageCircle className="w-10 h-10" />
+                      <MessageCircle className="w-6 h-6 md:w-10 md:h-10" />
                     </button>
                   </div>
                 </div>
