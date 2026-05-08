@@ -125,15 +125,15 @@ export default function App() {
       </div>
 
       {/* Header Bar */}
-      <header className="bg-red-700 text-white p-6 md:px-12 flex justify-between items-center shadow-xl relative z-50">
+      <header className="bg-red-700 text-white p-5 md:p-6 md:px-12 flex justify-between items-center shadow-xl relative z-50">
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex items-center space-x-6"
+          className="flex items-center space-x-4 md:space-x-6"
         >
           <motion.div 
-            whileHover={{ scale: 1.1 }}
-            className="bg-white p-1 w-14 h-14 rounded-full flex items-center justify-center shadow-inner cursor-pointer overflow-hidden"
+            whileHover={{ scale: 1.05 }}
+            className="bg-white p-1 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-inner cursor-pointer overflow-hidden ring-4 ring-white/10"
           >
             <img 
               src="https://nhracf.com/wp-content/uploads/2022/12/Nhracf-logo-1.png" 
@@ -143,8 +143,8 @@ export default function App() {
             />
           </motion.div>
           <div>
-            <h1 className="text-2xl md:text-3xl font-black tracking-tighter leading-none uppercase italic">NHRAC AMBULANCE</h1>
-            <p className="text-[10px] md:text-xs tracking-[0.2em] opacity-80 uppercase font-black mt-1">National Human Rights Anti Corruption Association</p>
+            <h1 className="text-xl md:text-3xl font-black tracking-tighter leading-none uppercase italic">NHRAC AMBULANCE</h1>
+            <p className="text-[9px] md:text-xs tracking-[0.2em] opacity-80 uppercase font-black mt-1">National Human Rights Anti Corruption Association</p>
           </div>
         </motion.div>
         
@@ -181,7 +181,7 @@ export default function App() {
             className="fixed inset-0 z-[60] bg-red-700/95 backdrop-blur-xl p-8 flex flex-col text-white"
           >
             <div className="flex justify-between items-center">
-              <div className="bg-white p-1 w-12 h-12 rounded-lg flex items-center justify-center overflow-hidden">
+              <div className="bg-white p-1.5 w-14 h-14 rounded-xl flex items-center justify-center overflow-hidden shadow-2xl">
                 <img 
                   src="https://nhracf.com/wp-content/uploads/2022/12/Nhracf-logo-1.png" 
                   alt="NHRAC Logo" 
@@ -347,7 +347,7 @@ export default function App() {
         </section>
 
         {/* Stats Bar Enhanced */}
-        <section className="bg-slate-950 text-white grid grid-cols-2 lg:grid-cols-4 divide-x divide-slate-800 border-y border-slate-900">
+        <section className="bg-slate-950 text-white grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/5 border-y border-white/5">
           <StatBlock label="Available Night & Day" value="24/7" />
           <StatBlock label="Mobile Medical Freezer" value="SUPPORT" isRed />
           <StatBlock label="Continuous Oxygen" value="HIGH-FLOW" />
@@ -582,11 +582,11 @@ export default function App() {
       </main>
 
       {/* Footer Bar Enhanced */}
-      <footer className="bg-slate-950 text-white p-12 border-t border-slate-900">
-        <div className="max-w-7xl mx-auto flex flex-col md:row justify-between items-center gap-12 text-center md:text-left">
+      <footer className="bg-slate-950 text-white p-8 md:p-12 border-t border-white/5">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10 md:gap-12 text-center md:text-left">
           <div className="space-y-6">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden p-1.5">
+            <div className="flex items-center justify-center md:justify-start space-x-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden p-1.5">
                 <img 
                   src="https://nhracf.com/wp-content/uploads/2022/12/Nhracf-logo-1.png" 
                   alt="NHRAC Logo" 
@@ -594,9 +594,9 @@ export default function App() {
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <h2 className="text-3xl font-black italic tracking-tighter">NATIONAL AMBULANCE</h2>
+              <h2 className="text-2xl md:text-3xl font-black italic tracking-tighter">NATIONAL AMBULANCE</h2>
             </div>
-            <div className="text-slate-500 text-sm max-w-sm">
+            <div className="text-slate-500 text-xs max-w-sm mx-auto md:mx-0">
               &copy; 2026 National Human Rights Anti Corruption Ambulance. <br/>
               Serving humanity with speed and care. Karipur, India.
             </div>
