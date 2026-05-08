@@ -1,20 +1,32 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# National Ambulance Service Website
 
-# Run and deploy your AI Studio app
+Professional 24/7 ambulance service website for Kareem (കരീം).
 
-This contains everything you need to run your app locally.
+## Features
+- **Modern Design**: Professional and mobile-friendly interface.
+- **SEO Optimized**: Meta tags for better search ranking.
+- **Advanced Facilities**: Highlights freezer and oxygen support.
+- **One-Click Call**: Direct call buttons for mobile users.
+- **WhatsApp Integration**: Floating message button.
 
-View your app in AI Studio: https://ai.studio/apps/d02abab6-6f27-4a0f-82c4-6fbc5e001b85
+## How to Deploy to GitHub Pages
 
-## Run Locally
+This project is configured to deploy automatically to GitHub Pages using GitHub Actions.
 
-**Prerequisites:**  Node.js
+1.  **Push to GitHub**: Upload this code to a new repository on GitHub.
+2.  **Enable Actions**: Go to **Settings > Actions > General** and ensure "Read and write permissions" are enabled for the `GITHUB_TOKEN`.
+3.  **Configure Pages**: Go to **Settings > Pages**. Under "Build and deployment", set the source to **GitHub Actions**.
+4.  **Wait for Build**: Check the **Actions** tab to see the deployment progress.
 
+## Local Development
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
